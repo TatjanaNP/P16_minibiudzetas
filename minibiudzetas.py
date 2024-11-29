@@ -1,4 +1,5 @@
 from statistika import statistika as stat
+
 pajamu_sarasas = []
 islaidu_sarasas = []
 while True:
@@ -43,6 +44,6 @@ while True:
                 f"Islaidos patirtos: {islaidu_data} | Islaidu saltinis: {islaidu_saltinis} | Islaidu suma: {islaidu_suma}")
         input("")
     elif pasirinkimas == "5":
-         print(stat(pajamu_sarasas, islaidu_sarasas))
+        stat(pajamu_sarasas, islaidu_sarasas)
     else:
-         print("Prasoma pasirinkti viena is auksciau nurodytu funkciju!")
+        print("Prasoma pasirinkti viena is auksciau nurodytu funkciju!")
