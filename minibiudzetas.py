@@ -1,4 +1,12 @@
 from statistika import statistika as stat
+import pickle
+
+# try:
+#     with open("pajamu_islaidu_listas.txt", mode="r") as file:
+#         pajamos_islaidos = pickle.load(file)
+# except FileNotFoundError:
+#     print("Failo dar nera")
+#
 
 pajamu_sarasas = []
 islaidu_sarasas = []
@@ -32,18 +40,29 @@ while True:
         islaidos = [islaidu_data, islaidu_saltinis, islaidu_suma]
         islaidu_sarasas.append(islaidos)
         input("")
+
     elif pasirinkimas == "3":
         print("Gautos pajamos")
         for pajamu_data, pajamu_saltinis, pajamu_suma in pajamu_sarasas:
             print(f"Pajamos gautos: {pajamu_data} | Pajamu saltinis: {pajamu_saltinis} | Pajamu suma: {pajamu_suma}")
         input("")
+
     elif pasirinkimas == "4":
         print("Patirtos islaidos")
         for islaidu_data, islaidu_saltinis, islaidu_suma in islaidu_sarasas:
             print(
                 f"Islaidos patirtos: {islaidu_data} | Islaidu saltinis: {islaidu_saltinis} | Islaidu suma: {islaidu_suma}")
         input("")
+
     elif pasirinkimas == "5":
         stat(pajamu_sarasas, islaidu_sarasas)
+        input("")
+
     else:
-        print("Prasoma pasirinkti viena is auksciau nurodytu funkciju!")
+        print("Prasome pasirinkti viena is auksciau nurodytu funkciju!")
+finansai = [pajamu_sarasas, islaidu_sarasas]
+
+with open("pajamu_islaidu_listas.txt", mode="wb") as file:
+    # noinspection PyTypeChecker
+    pickle.dump(finansai, file)
+
