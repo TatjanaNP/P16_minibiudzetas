@@ -1,3 +1,4 @@
+from statistika import statistika as stat
 pajamu_sarasas = []
 islaidu_sarasas = []
 while True:
@@ -6,6 +7,7 @@ while True:
     2 - Ivesti islaidas
     3 - Atspausdinti pajamas
     4 - Atspausdinti islaidas
+    5 - Rodyti statistika
     q - iseiti is programos
     """)
     pasirinkimas = input("> ")
@@ -40,5 +42,7 @@ while True:
             print(
                 f"Islaidos patirtos: {islaidu_data} | Islaidu saltinis: {islaidu_saltinis} | Islaidu suma: {islaidu_suma}")
         input("")
+    elif pasirinkimas == "5":
+         print(stat(pajamu_sarasas, islaidu_sarasas))
     else:
          print("Prasoma pasirinkti viena is auksciau nurodytu funkciju!")
