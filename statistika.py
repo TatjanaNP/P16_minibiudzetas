@@ -9,7 +9,7 @@
 
 # pameginti iskirstyti menesiais ir metais
 
-def statistika(pajamu_listas, islaidu_listas):
+def spausdink_statistika(pajamu_listas, islaidu_listas):
     visos_pajamos = 0
     visos_islaidos = 0
     didziausios_pajamos = 0

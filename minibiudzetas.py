@@ -1,15 +1,17 @@
-from statistika import statistika as stat
+from statistika import spausdink_statistika as stat
+from trynimas import trink_duomenis as trink
 import pickle
-
-# try:
-#     with open("pajamu_islaidu_listas.txt", mode="r") as file:
-#         pajamos_islaidos = pickle.load(file)
-# except FileNotFoundError:
-#     print("Failo dar nera")
-#
-
 pajamu_sarasas = []
 islaidu_sarasas = []
+try:
+    with open("pajamu_islaidu_listas.txt", mode="rb") as file:
+        pajamos_islaidos = pickle.load(file)
+        pajamu_sarasas = pajamos_islaidos[0]
+        islaidu_sarasas = pajamos_islaidos[1]
+except FileNotFoundError:
+    print("Failo dar nera")
+
+
 while True:
     print(""" Pasirinkite norima veiksma:
     1 - Ivesti pajamas
@@ -17,6 +19,7 @@ while True:
     3 - Atspausdinti pajamas
     4 - Atspausdinti islaidas
     5 - Rodyti statistika
+    6 - Duomenu trynimas
     q - iseiti is programos
     """)
     pasirinkimas = input("> ")
@@ -57,12 +60,28 @@ while True:
     elif pasirinkimas == "5":
         stat(pajamu_sarasas, islaidu_sarasas)
         input("")
+    elif pasirinkimas == "6":
+        print("""Pasirinkite, kuri sarasa norite pakoreguoti:
+            Pajamu saraso korekcija - '1'
+            Islaidu saraso korekcija - '2'
+            """)
+        saraso_pasirinkimas = input('')
+        if saraso_pasirinkimas == "q":
+            continue
+        if saraso_pasirinkimas == "1":
+            trink(pajamu_sarasas)
+            input("")
+        elif saraso_pasirinkimas == "2":
+            trink(islaidu_sarasas)
+            input("")
+        else:
+            print("Prasome pasirinkti viena is meniu nurodytu veiksmu: ")
 
     else:
         print("Prasome pasirinkti viena is auksciau nurodytu funkciju!")
-finansai = [pajamu_sarasas, islaidu_sarasas]
+
+pajamos_islaidos = [pajamu_sarasas, islaidu_sarasas]
 
 with open("pajamu_islaidu_listas.txt", mode="wb") as file:
     # noinspection PyTypeChecker
-    pickle.dump(finansai, file)
-
+    pickle.dump(pajamos_islaidos, file)
