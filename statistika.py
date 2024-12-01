@@ -29,5 +29,10 @@ def spausdink_statistika(pajamu_listas, islaidu_listas):
 
     print(f"Bendra pajamu suma: {visos_pajamos}")
     print(f"Bendra islaidu suma: {visos_islaidos}")
-    print(f"Didziausios gautos pajamos: {max_pajamos}")
-    print(f"Didziausios patirtos islaidos: {max_islaidos}")
+    print(f"Didziausios gautos pajamos:", end=" ")
+    for elem in max_pajamos:
+        print(elem, end="|")
+    print("")
+    print(f"Didziausios patirtos islaidos:", end=" ")
+    for elem in max_islaidos:
+        print(elem, end="|")

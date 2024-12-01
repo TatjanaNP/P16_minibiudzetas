@@ -63,21 +63,7 @@ while True:
         stat(pajamu_sarasas, islaidu_sarasas)
         input("")
     elif pasirinkimas == "6":
-        print("""Pasirinkite, kuri sarasa norite pakoreguoti:
-            Pajamu saraso korekcija - '1'
-            Islaidu saraso korekcija - '2'
-            """)
-        saraso_pasirinkimas = input('')
-        if saraso_pasirinkimas == "q":
-            continue
-        if saraso_pasirinkimas == "1":
-            trink(pajamu_sarasas)
-            input("")
-        elif saraso_pasirinkimas == "2":
-            trink(islaidu_sarasas)
-            input("")
-        else:
-            print("Prasome pasirinkti viena is meniu nurodytu veiksmu: ")
+        trink(pajamu_sarasas, islaidu_sarasas)
     elif pasirinkimas == "7":
         ieskok(pajamu_sarasas, islaidu_sarasas)
         input("")
