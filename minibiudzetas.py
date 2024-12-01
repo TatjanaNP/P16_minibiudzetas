@@ -2,14 +2,22 @@ from statistika import spausdink_statistika as stat
 from trynimas import trink_duomenis as trink
 from paieska import ieskok
 import pickle
+import logging
 
 pajamu_sarasas = []
 islaidu_sarasas = []
+
+logging.basicConfig(level=logging.DEBUG,
+                    filename="pajamu_islaidu_zurnalas.log",
+                    encoding="utf-8",
+                    format="%(asctime)s %(levelname)s  %(message)s")
+
 try:
     with open("pajamu_islaidu_listas.txt", mode="rb") as file:
         pajamos_islaidos = pickle.load(file)
         pajamu_sarasas = pajamos_islaidos[0]
         islaidu_sarasas = pajamos_islaidos[1]
+        logging.info("Atidarytas ir perskaitytas pajamu_islaidu_listas")
 except FileNotFoundError:
     print("Failo dar nėra")
 
@@ -75,3 +83,4 @@ pajamos_islaidos = [pajamu_sarasas, islaidu_sarasas]
 with open("pajamu_islaidu_listas.txt", mode="wb") as file:
     # noinspection PyTypeChecker
     pickle.dump(pajamos_islaidos, file)
+    logging.info("Į failą įrašyta atnaujinta pajamų/ išlaidų informacija")

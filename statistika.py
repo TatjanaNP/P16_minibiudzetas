@@ -26,8 +26,8 @@ def spausdink_statistika(pajamu_listas, islaidu_listas):
     print(f"Bendra išlaidų suma: {visos_islaidos}")
     print(f"Didžiausios gautos pajamos:", end=" ")
     for elem in max_pajamos:
-        print(elem, sep=" | ")
+        print(elem, end=" ")
     print("")
     print(f"Didžiausios patirtos išlaidos:", end=" ")
     for elem in max_islaidos:
-        print(elem, sep=" | ")
+        print(elem, end=" ")
