@@ -1,9 +1,4 @@
 # statistika:
-# bendra pajamu suma
-# bendra islaidu suma
-# didziausios pajamos - saltinis ir suma
-
-# didziausios islaidos - saltinis ir suma
 
 # sugrupuoti pagal islaidu pobudi
 
@@ -27,12 +22,12 @@ def spausdink_statistika(pajamu_listas, islaidu_listas):
             didziausios_islaidos = islaidu_suma
             max_islaidos = [islaidu_data, islaidu_saltinis, islaidu_suma]
 
-    print(f"Bendra pajamu suma: {visos_pajamos}")
-    print(f"Bendra islaidu suma: {visos_islaidos}")
-    print(f"Didziausios gautos pajamos:", end=" ")
+    print(f"Bendra pajamų suma: {visos_pajamos}")
+    print(f"Bendra išlaidų suma: {visos_islaidos}")
+    print(f"Didžiausios gautos pajamos:", end=" ")
     for elem in max_pajamos:
-        print(elem, end="|")
+        print(elem, sep=" | ")
     print("")
-    print(f"Didziausios patirtos islaidos:", end=" ")
+    print(f"Didžiausios patirtos išlaidos:", end=" ")
     for elem in max_islaidos:
-        print(elem, end="|")
+        print(elem, sep=" | ")
