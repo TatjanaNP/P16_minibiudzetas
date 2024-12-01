@@ -1,5 +1,6 @@
 from statistika import spausdink_statistika as stat
 from trynimas import trink_duomenis as trink
+from paieska import ieskok
 import pickle
 pajamu_sarasas = []
 islaidu_sarasas = []
@@ -20,6 +21,7 @@ while True:
     4 - Atspausdinti islaidas
     5 - Rodyti statistika
     6 - Duomenu trynimas
+    7 - Duomenu paieska
     q - iseiti is programos
     """)
     pasirinkimas = input("> ")
@@ -76,7 +78,9 @@ while True:
             input("")
         else:
             print("Prasome pasirinkti viena is meniu nurodytu veiksmu: ")
-
+    elif pasirinkimas == "7":
+        ieskok(pajamu_sarasas, islaidu_sarasas)
+        input("")
     else:
         print("Prasome pasirinkti viena is auksciau nurodytu funkciju!")
 
